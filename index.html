@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admit Card</title>
+    <link rel="stylesheet" href="team.css">
+    <link rel="stylesheet"
+        href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+</head>
+
+<body>
+    <!---------------------------------------------HEADER SECTION START------------------------------------------->
+    <section class="groups">
+        <img src="logo2.png" alt="logo">
+        <h1 class="groups__heading">Select Your Group</h1>
+        <div class="cards">
+            <div class="card" onclick="groupOne(this)">Group 1</div>
+            <div class="card" onclick="groupTwo(this)">Group 2</div>
+            <div class="card" onclick="groupThree(this)">Group 3</div>
+            <div class="card" onclick="groupFour(this)">Group 4</div>
+        </div>
+    </section>
+    <!---------------------------------------------TEAM SEC-1 START----------------------------------------------->
+    <main class="table" id="content1">
+        <section class="table__header">
+            <h1></h1>
+            <div class="input-group">
+                <input type="search" id="search-input-team-a" placeholder="Search Here...">
+                <i class="las la-search"></i>
+            </div>
+        </section>
+        <section class="table__body">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Participant</th>
+                        <th>Admit Card</th>
+                    </tr>
+                </thead>
+                <tbody id="team-a">
+                    <!-- google sheet data appears here -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <!-----------------------------------------------TEAM SEC-2 START------------------------------------------------>
+    <main class="table" id="content2">
+        <section class="table__header">
+            <h1></h1>
+            <div class="input-group">
+                <input type="search" id="search-input-team-b" placeholder="Search Here...">
+                <i class="las la-search"></i>
+            </div>
+        </section>
+        <section class="table__body">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Participant</th>
+                        <th>Admit Card</th>
+                    </tr>
+                </thead>
+                <tbody id="team-b">
+                    <!-- google sheet data appears here -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <!---------------------------------------------TEAM SEC-3 START------------------------------------------->
+    <main class="table" id="content3">
+        <section class="table__header">
+            <h1></h1>
+            <div class="input-group">
+                <input type="search" id="search-input-team-c" placeholder="Search Here...">
+                <i class="las la-search"></i>
+            </div>
+        </section>
+        <section class="table__body">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Participant</th>
+                        <th>Admit Card</th>
+                    </tr>
+                </thead>
+                <tbody id="team-c">
+                    <!-- google sheet data appears here -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <!------------------------------------------------TEAM SEC-4 START------------------------------------------->
+    <main class="table" id="content4">
+        <section class="table__header">
+            <h1></h1>
+            <div class="input-group">
+                <input type="search" id="search-input-team-d" placeholder="Search Here...">
+                <i class="las la-search"></i>
+            </div>
+        </section>
+        <section class="table__body">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Participant</th>
+                        <th>Admit Card</th>
+                    </tr>
+                </thead>
+                <tbody id="team-d">
+                    <!-- google sheet data appears here -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+    <!---------------------------------------------AUTHENTICATION POPUP-------------------------------------------->
+    <div id="loginModal" class="modal">
+        <div class="container">
+            <div class="registration-form">
+                <button class="close">×</button>
+                <h2>Entry Verification</h2>
+                <form id="loginForm">
+                    <div class="input-group">
+                        <label for="username">Group</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <button type="submit" class="btn2">Get In</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-------------------------------------------- TEAM MEMBER ADMIT CARD ------------------------------------------->
+    <div class="container-box">
+        <div class="lightbox" id="bgRemove">
+            <div class="admit-card">
+                <h1 id="masa">MASA ARTS FEST 2025</h1>
+                <h3 id="admit-head">ADMIT CARD</h3>
+                <div class="cate-div">
+                    <h3 class="yoyi">Code No</h3>
+                    <h3 id="num-admit"><!-- google sheet data appears here --></h3>
+                </div>
+                <div class="cate-div">
+                    <h3 class="yoyi">Name</h3>
+                    <h3 id="name"><!-- google sheet data appears here --></h3>
+                </div>
+                <div class="cate-div">
+                    <h3 class="yoyi">Category</h3>
+                    <h3 id="cate"><!-- google sheet data appears here --></h3>
+                </div>
+                <div class="cate-div">
+                    <h3 class="yoyi">Class</h3>
+                    <h3 id="class"><!-- google sheet data appears here --></h3>
+                </div>
+                <div class="cate-div">
+                    <h3 class="yoyi">Group</h3>
+                    <h3 id="team"><!-- google sheet data appears here --></h3>
+                </div>
+                <h1 id="masa2">PROGRAMMES</h1>
+                <div class="items" id="items-div">
+                    <!-- google sheet data appears here -->
+                </div>
+                <div class="sigContainer">
+                    <div class="signature-box">
+                        <p>Canditate Sign</p>
+                    </div>
+                </div>
+            </div>
+            <button id="bttn" class="prin">Download</button>
+        </div>
+    </div>
+    <!-------------------------------------------- SCRIPTS ------------------------------------------->
+    <script src="team.js"></script>
+</body>
+
+</html>

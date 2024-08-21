@@ -1,0 +1,526 @@
+/* ----------------------------------------------------- Fonts ------------------------------------------------------------ */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap');
+
+/* ----------------------------------------------------- GLOBAL ------------------------------------------------------------ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    max-height: 120vh;
+    background-color: #3B5226;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: 400;
+}
+
+/* ------------------------------------------------ 4 CARD SECTIONS -------------------------------------------------------- */
+.groups {
+    width: 82vw;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.groups img {
+    width: 300px;
+    height: auto;
+}
+
+.groups__heading {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.card {
+    flex: 1 1 calc(25% - 2rem);
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+    text-align: center;
+    transition: transform 0.2s;
+    cursor: pointer;
+}
+
+.active {
+    color: white;
+    background-color: #57852c;
+}
+
+.card:hover {
+    transform: translateY(-0.5rem);
+    color: white;
+    background-color: #57852c;
+}
+
+@media (max-width: 768px) {
+    .card {
+        flex: 1 1 calc(50% - 1rem);
+    }
+}
+
+/* ----------------------------------------------------- MAIN TABLE DATAS --------------------------------------------------- */
+main.table {
+    width: 82vw;
+    height: 90vh;
+    background-color: rgba(31, 25, 25, 0.333);
+    backdrop-filter: blur(7px);
+    box-shadow: 0 .4rem .8rem #0005;
+    border-radius: .8rem;
+    overflow: hidden;
+    display: none;
+}
+
+.btn {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #57852c;
+    color: white;
+    cursor: pointer;
+}
+
+.table__header {
+    width: 100%;
+    height: 10%;
+    background-color: #57852c;
+    padding: .8rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.table__header .input-group {
+    width: 50%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.553);
+    padding: 0 .8rem;
+    border-radius: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .2s;
+}
+
+.table__header .input-group:hover {
+    width: 100%;
+    background-color: #fff8;
+    box-shadow: 0 .1rem .4rem #0002;
+}
+
+.table__header .input-group i {
+    font-size: 24px;
+    transform: scaleX(-1);
+}
+
+.table__header .input-group input {
+    width: 100%;
+    padding: 0 .5rem 0 .3rem;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.table__body {
+    width: 95%;
+    max-height: calc(89% - 1.6rem);
+    background-color: #fffb;
+    margin: .8rem auto;
+    border-radius: .6rem;
+    overflow: auto;
+    overflow: overlay;
+}
+
+.table__body::-webkit-scrollbar {
+    width: 0.5rem;
+    height: 0.5rem;
+}
+
+.table__body::-webkit-scrollbar-thumb {
+    border-radius: .5rem;
+    background-color: #0004;
+    visibility: hidden;
+}
+
+.table__body:hover::-webkit-scrollbar-thumb {
+    visibility: visible;
+}
+
+table {
+    width: 100%;
+}
+
+table,
+th,
+td {
+    border-collapse: separate;
+    padding: 1rem;
+    text-align: center;
+}
+
+thead th {
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: #d5d1defe;
+    cursor: pointer;
+    text-transform: capitalize;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #0000000b;
+}
+
+tbody tr {
+    --delay: .1s;
+    transition: .5s ease-in-out var(--delay), background-color 0s;
+}
+
+tbody tr:hover {
+    background-color: #fff6 !important;
+}
+
+tbody tr td {
+    transition: .2s ease-in-out;
+}
+
+@media (max-width: 1000px) {
+    td:not(:first-of-type) {
+        min-width: 4.1rem;
+    }
+
+    main.table {
+        width: 95vw;
+    }
+}
+
+thead th:hover {
+    color: #6c00bd;
+}
+
+thead th.active,
+tbody td.active {
+    color: #6c00bd;
+}
+
+/* ------------------------------------------- ADMIT CARD POPUP STYLE --------------------------------------------------- */
+
+.container-box {
+    z-index: 1;
+    position: absolute;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 120%;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.lightbox {
+    position: relative;
+    min-height: 400px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 50%;
+    width: 100%;
+}
+
+.admit-card {
+    text-align: center;
+}
+
+#admit-head,
+#masa {
+    margin-bottom: 10px;
+}
+
+.cate-div {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cate-div h3 {
+    flex: 1 1 calc(25% - 2rem);
+    border: 2px solid black;
+
+}
+
+#masa2 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 25px;
+}
+
+.items {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.items p {
+    flex: 1 1 calc(25% - 2rem);
+    font-family: Anek-Malayalam;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 5px 5px;
+}
+
+.sigContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signature-box {
+    width: 200px;
+    height: 80px;
+    border: 2px solid #000;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    line-height: 10px;
+    margin-top: 20px;
+}
+
+.prin {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgb(0, 255, 0);
+    color: black;
+    cursor: pointer;
+}
+
+@media(max-width:800px) {
+
+    #admit-head,
+    #masa,
+    #masa2 {
+        font-size: 15px;
+    }
+
+    .prin {
+        font-size: 9px;
+        padding: 2px;
+        bottom: 1px;
+    }
+
+    .cate-div h3 {
+        font-size: 15px;
+    }
+
+    .items p {
+        font-size: 13px;
+        padding: 3px;
+    }
+
+    .signature-box {
+        font-size: 15px;
+    }
+
+    .programs2 {
+        display: none;
+    }
+
+    .container-box {
+        height: 127%;
+    }
+
+}
+
+/* ----------------------------------------------------- PRNT PAGE STYLE ---------------------------------------------------- */
+@media print {
+
+    /* Your print-specific styles here */
+    .container-box {
+        display: block !important;
+    }
+
+    /* Add styles to hide unwanted elements */
+    body * {
+        display: none;
+    }
+
+    .container-box,
+    .container-box * {
+        display: block;
+    }
+
+    .lightbox {
+        position: absolute;
+        align-items: center;
+        width: 8.27in;
+        height: 10.69in;
+        left: 0;
+        border-radius: 0;
+    }
+
+    #admit-head,
+    #masa,
+    #masa2 {
+        font-size: 30px;
+    }
+
+    .admit-card {
+        display: block;
+        width: 8.27in;
+        height: 10.69in;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+    }
+
+    .items {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .items p {
+        flex: 1 1 calc(25% - 2rem);
+        font-family: "Ubuntu", sans-serif;
+        border: 2px solid black;
+        border-radius: 5px;
+        padding: 5px 5px;
+    }
+
+    .cate-div {
+        display: flex;
+        flex-flow: row;
+        justify-content: flex-start;
+        width: 100%;
+        margin-top: 6px;
+    }
+
+    .prin {
+        visibility: hidden;
+    }
+
+    /* Adjust the above based on your HTML structure */
+}
+
+/* ------------------------------------------- AUTHENTICATION POPUP STYLE ---------------------------------------------------- */
+.modal {
+    z-index: 1;
+    position: absolute;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    overflow: none;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.container {
+    position: relative;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+}
+
+.registration-form {
+    text-align: center;
+}
+
+.registration-form h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.input-group input:focus {
+    border-color: #007BFF;
+}
+
+.btn2 {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #007BFF;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #555;
+}
+
+.close:hover {
+    color: #f50000;
+}
+
+.btn1:hover {
+    background-color: #0056b3;
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 25px;
+        width: 80%;
+    }
+
+    .modal {
+        height: 127%;
+    }
+
+    .btn {
+        font-size: 14px;
+    }
+}

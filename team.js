@@ -1,10 +1,10 @@
 //-----------------------------------------------THE AUTHENTICATION SETUP-------------------------------------------------
 const groupCredentials = {
     //INITIALLY ADDED THE USERNAME AND PASSWORDS FOR EACH GROUPS
-    'Group 1': { username: '1', password: '1' },
-    'Group 2': { username: '1', password: '1' },
-    'Group 3': { username: '1', password: '1' },
-    'Group 4': { username: '1', password: '1' }
+    'Group 1': { username: 'shanib', password: '518146shazzz' },
+    'Group 2': { username: 'ALTHAF', password: 'ALTHAF' },
+    'Group 3': { username: 'KCEC', password: '12344321' },
+    'Group 4': { username: 'GROUPD', password: 'groupd' }
 };
 
 //WHEN CLICK ON THE GROUP CARDS THE FUNCTION WILL INITIATE LINE 46,301,562,824
